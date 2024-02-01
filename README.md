@@ -11,7 +11,7 @@ Um projeto simples e interativo que utiliza a API do GitHub para exibir informa√
 ## Tecnologias Utilizadas
 
 - HTML5
-- CSS3
+- Sass
 - JavaScript
 
 ## Como Usar
