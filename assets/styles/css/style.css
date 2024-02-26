@@ -1,0 +1,75 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  background-color: #0A0908;
+  color: #F2F4F3;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card {
+  background-color: #373A3B;
+  border-radius: 5px;
+  height: 600px;
+  width: 430px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card .user-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 50px;
+}
+.card .user-links .item-link a {
+  background: #1f1f1f;
+  border-radius: 5px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: center;
+  transition: 0.3s;
+}
+.card .user-links .item-link a:hover {
+  scale: 1.1;
+}
+.card .arrow-left {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  top: 160px;
+  left: 190px;
+}
+.card #back {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

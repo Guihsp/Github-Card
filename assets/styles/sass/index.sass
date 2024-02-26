@@ -1,0 +1,65 @@
+@import ./sass_variables_mixins/_style_global
+@import ./sass_variables_mixins/_variables
+@import ./sass_variables_mixins/_mixins
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    list-style: none
+    text-decoration: none
+
+
+body, html
+    height: 100%
+    font-family: $font-family
+    background-color: $bg-color
+    color: $font-color
+
+body 
+    @include flexCenter(center, center, column)
+    overflow: hidden
+
+.card 
+    background-color: $primary-color
+    border-radius: 5px
+    height: 600px
+    width: 430px
+    @include flexCenter(center, center, column)
+
+    .user-links
+        @include flexCenter(space-between, center, row)
+        gap: 50px
+
+        .item-link
+            a
+                background: #1f1f1f
+                border-radius: 5px
+                padding: 3px
+                @include flexCenter(center, center, center)
+                transition: 0.3s
+
+            a:hover
+                scale: 1.1
+
+    .arrow-left
+        background: transparent
+        border: none
+        cursor: pointer
+        position: relative
+        top: 160px
+        left: 190px
+
+                
+
+        
+        
+
+
+        
+    #back
+        display: none
+    
+
+
+    
