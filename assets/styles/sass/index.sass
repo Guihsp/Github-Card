@@ -9,27 +9,69 @@
     list-style: none
     text-decoration: none
 
-
 body, html
     height: 100%
     font-family: $font-family
     background-color: $bg-color
     color: $font-color
 
-body 
+body
     @include flexCenter(center, center, column)
     overflow: hidden
 
-.card 
-    background-color: $primary-color
-    border-radius: 5px
-    height: 600px
-    width: 430px
-    @include flexCenter(center, center, column)
+.card
+    width: 380px
+    height: 580px
+    position: relative
 
-    .user-links
-        @include flexCenter(space-between, center, row)
-        gap: 50px
+    main
+        position: absolute
+        width: 100%
+        height: 100%
+        backface-visibility: hidden
+        transition: 0.5s
+        background-color: $primary-color
+        border-radius: 10px
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+        transition: 1s ease-in-out
+
+    #front
+        &.spin
+            transform: perspective(500px) rotateY(180deg)
+
+        .avatar
+            width: 160px
+            height: 160px
+            border-radius: 50%
+            object-fit: cover
+
+        .user-name
+            font-size: 1.5rem
+            margin: 5px 0
+
+        .user-bio
+            font-size: 1.3rem
+            text-align: center
+
+        .user-infos
+            @include flexCenter(center, center, row)
+            gap: 20px
+            margin: 10px 0
+
+        .item-info
+            @include flexCenter(center, center, column)
+            gap: 5px
+
+        .user-github
+            color: $font-color
+            font-size: 1.1rem
+            margin-bottom: 20px
+            @include flexCenter(center, center, row)
+            gap: 10px
+
+        .user-links
+            @include flexCenter(space-between, center, row)
+            gap: 10px
 
         .item-link
             a
@@ -42,24 +84,32 @@ body
             a:hover
                 scale: 1.1
 
-    .arrow-left
-        background: transparent
-        border: none
-        cursor: pointer
-        position: relative
-        top: 160px
-        left: 190px
+        .arrow-left
+            background: transparent
+            border: none
+            cursor: pointer
+            position: relative
+            top: 15%
+            left: 40%
 
-                
-
-        
-        
-
-
-        
     #back
-        display: none
-    
+        transform: perspective(500px) rotateY(180deg)
+
+        &.spin
+            transform: perspective(500px) rotateY(360deg)
+
+        p
+            font-size: 1.1rem
+            margin: 10px 0
+            text-align: center
+            font-weight: 700
 
 
-    
+
+        .arrow-right
+            background: transparent
+            border: none
+            cursor: pointer
+            position: relative
+            top: 15%
+            left: 40%

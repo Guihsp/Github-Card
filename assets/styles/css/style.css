@@ -31,23 +31,71 @@ body {
 }
 
 .card {
+  width: 380px;
+  height: 580px;
+  position: relative;
+}
+.card main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: 0.5s;
   background-color: #373A3B;
-  border-radius: 5px;
-  height: 600px;
-  width: 430px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 1s ease-in-out;
+}
+.card #front.spin {
+  transform: perspective(500px) rotateY(180deg);
+}
+.card #front .avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.card #front .user-name {
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+.card #front .user-bio {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.card #front .user-infos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  margin: 10px 0;
+}
+.card #front .item-info {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 5px;
 }
-.card .user-links {
+.card #front .user-github {
+  color: #F2F4F3;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.card #front .user-links {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  gap: 50px;
+  gap: 10px;
 }
-.card .user-links .item-link a {
+.card #front .item-link a {
   background: #1f1f1f;
   border-radius: 5px;
   padding: 3px;
@@ -57,19 +105,36 @@ body {
   flex-direction: center;
   transition: 0.3s;
 }
-.card .user-links .item-link a:hover {
+.card #front .item-link a:hover {
   scale: 1.1;
 }
-.card .arrow-left {
+.card #front .arrow-left {
   background: transparent;
   border: none;
   cursor: pointer;
   position: relative;
-  top: 160px;
-  left: 190px;
+  top: 15%;
+  left: 40%;
 }
 .card #back {
-  display: none;
+  transform: perspective(500px) rotateY(180deg);
+}
+.card #back.spin {
+  transform: perspective(500px) rotateY(360deg);
+}
+.card #back p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: 700;
+}
+.card #back .arrow-right {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  top: 15%;
+  left: 40%;
 }
 
 /*# sourceMappingURL=style.css.map */
