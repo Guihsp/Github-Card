@@ -1,12 +1,4 @@
-.container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap';
 * {
   margin: 0;
   padding: 0;
@@ -18,8 +10,8 @@
 body, html {
   height: 100%;
   font-family: "Inter", sans-serif;
-  background-color: #0A0908;
-  color: #F2F4F3;
+  background-color: #161616;
+  color: #333;
 }
 
 body {
@@ -27,114 +19,177 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  overflow: hidden;
 }
 
-.card {
-  width: 380px;
-  height: 580px;
-  position: relative;
-}
-.card main {
-  position: absolute;
-  width: 100%;
+.container-right {
+  background: #333333;
+  border-radius: 10px 0 0 10px;
   height: 100%;
-  backface-visibility: hidden;
-  transition: 0.5s;
-  background-color: #373A3B;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  transition: 1s ease-in-out;
+  padding: 0 30px;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
 }
-.card #front.spin {
-  transform: perspective(500px) rotateY(180deg);
-}
-.card #front .avatar {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.card #front .user-name {
-  font-size: 1.5rem;
-  margin: 5px 0;
-}
-.card #front .user-bio {
-  font-size: 1.3rem;
-  text-align: center;
-}
-.card #front .user-infos {
+.container-right .box {
+  transform: rotate(-90deg);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 20px;
-  margin: 10px 0;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
 }
-.card #front .item-info {
+.container-right .box a, .container-right .box p {
+  color: #F5F5F5;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.arrow {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 90%;
+  right: 5%;
+  cursor: pointer;
+}
+
+.card {
+  width: 390px;
+  height: 580px;
+  border-radius: 10px;
+  position: relative;
+}
+.card #front, .card #back {
+  background-color: #F5F5F5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: 1s ease-in-out;
+  backface-visibility: hidden;
+  transform: perspective(500px) rotateY(0deg);
+}
+.card #front::after, .card #back::after {
+  content: "";
+  height: 100px;
+  width: 80px;
+  background: #D9D9D9;
+  border-radius: 0 0 3px 3px;
+  position: absolute;
+  bottom: 94.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+.card #front::before, .card #back::before {
+  content: "";
+  height: 8px;
+  width: 100px;
+  background: #161616;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card #front {
+  display: flex;
+  height: 100%;
+}
+.card #front.flip {
+  transform: perspective(500px) rotateY(180deg);
+}
+.card #front .container-infos {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 5px;
-}
-.card #front .user-github {
-  color: #F2F4F3;
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 10px;
-}
-.card #front .user-links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  gap: 10px;
-}
-.card #front .item-link a {
-  background: #1f1f1f;
-  border-radius: 5px;
-  padding: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: center;
-  transition: 0.3s;
-}
-.card #front .item-link a:hover {
-  scale: 1.1;
-}
-.card #front .arrow-left {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  top: 15%;
-  left: 40%;
-}
-.card #back {
-  transform: perspective(500px) rotateY(180deg);
-}
-.card #back.spin {
-  transform: perspective(500px) rotateY(360deg);
-}
-.card #back p {
-  font-size: 1.1rem;
-  margin: 10px 0;
   text-align: center;
+  gap: 10px;
+  padding: 0 5px;
+}
+.card #front .container-infos .user-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+.card #front .container-infos .user-name {
+  font-size: 1.5rem;
   font-weight: 700;
 }
-.card #back .arrow-right {
+.card #front .container-infos .followers-repos {
+  display: flex;
+  gap: 5px;
+}
+.card #front .container-infos .followers-repos .followers, .card #front .container-infos .followers-repos .repos {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.card #back {
+  height: 100%;
+  display: flex;
+  transform: perspective(500px) rotateY(180deg);
+}
+.card #back.flip {
+  transform: perspective(500px) rotateY(360deg);
+}
+.card #back .container-form {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.card #back .container-form p {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 80px;
+}
+.card #back .container-form a {
+  color: #333333;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+.card #back form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 100px;
+}
+.card #back form label {
+  color: #000;
+  font-weight: 600;
+}
+.card #back form input {
   background: transparent;
   border: none;
+  border-bottom: 1px solid #333333;
+  margin: 5px 0 20px 0;
+  font-size: 1.1rem;
+  outline: none;
+}
+.card #back form button {
+  background: #333333;
+  color: #F5F5F5;
+  border: 1px solid #333333;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 10px;
   cursor: pointer;
-  position: relative;
-  top: 15%;
-  left: 40%;
+  transition: 0.3s ease-in-out;
+}
+.card #back form button:hover {
+  background: #F5F5F5;
+  color: #333333;
 }
 
 /*# sourceMappingURL=style.css.map */

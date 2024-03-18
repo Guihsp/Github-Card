@@ -11,79 +11,75 @@
 <body>
 
     <div class="card">
-
-        <main id="front">
-            <div class="container">
-
-                <div class="github-avatar">
-                    <img class="avatar" src="" alt="Avatar do github">
+        <div id="front">
+            <div class="container-right">
+                <div class="box">
+                    <img src="./assets/img/github.svg" alt="Github">
+                    <a href="" class="user-login"></a>
                 </div>
-
-                <h1 class="user-name">Guilherme Henrique</h1>
-                <a class="user-github" href="" target="_blank">
-                    <img src="./assets/img/github.svg" alt="github logo" />
-                    <span class="user-nick">Guihsp</span>
-                </a>
-
-                <div class="user-infos">
-                    <p class="followers">10 <span>Seguidores</span></p>
-                    <p class="repos">11 <span>Repositorios</span></p>
-                </div>
-
-                <h1 class="user-bio">Desenvolvedor Web</h1>
-
-                <ul class="user-links">
-                    <li class="item-link">
-                        <a href="" target="_blank">
-                            <img src="./assets/img/instagram.svg" alt="instagram">
-                        </a>
-                    </li>
-                    <li class="item-link">
-                        <a href="" target="_blank">
-                            <img src="./assets/img/linkedin.svg" alt="linkedin">
-                        </a>
-                    </li>
-                    <li class="item-link">
-                        <a href="" target="_blank">
-                            <img src="./assets/img/whatsapp.svg" alt="whatsapp">
-                        </a>
-                    </li>
-                </ul>
-
-                <button class="arrow-left" type="button" onclick="spin()">
-                    <img src="./assets/img/arrow.svg" alt="Seta para Esquerda">
-                </button>
             </div>
-        </main>
 
-        <main id="back">
-            <div class="container">
-                
-                <p>Insira suas informações para fazer o seu card</p>
+            <div class="container-infos">
+                <img src="" alt="Avatar" class="user-avatar">
+                <h1 class="user-name"></h1>
+
+                <div class="followers-repos">
+                    <span class="followers">
+                        <img src="./assets/img/followers.svg">
+                        <span class="user-followers"> </span>
+                        - Seguidores
+                    </span>
+                    <span class="repos">
+                        <img src="./assets/img/book.svg">
+                        <span class="user-repos"></span>
+                        - Repositórios
+                    </span>
+                </div>
+
+                <p class="location">
+                    <img src="./assets/img/location_on.svg" alt="Localização">
+                    <span class="user-location"></span>
+                </p>
+
+                <p class="user-bio"></p>
+
+
+
+                <button class="arrow" onclick="flip()">
+                    <img src="./assets/img/arrow.svg" alt="Arrow">
+                </button>
+
+            </div>
+        </div>
+
+        <div id="back">
+            <div class="container-right">
+                <div class="box">
+                    <img src="./assets/img/github.svg" alt="Github">
+                    <p>Card</p>
+                </div>
+            </div>
+
+            <div class="container-form">
+                <P>
+                    Insira seu Login do GitHub para ver as informações
+                </P>
+
                 <form>
-                    <label for="user-github">User do GitHub</label>
-                    <input type="text" id="user-github" placeholder="Digite seu user do GitHub">
+                    <label for="input">Login GITHUB:</label>
+                    <input type="text" id="github" name="github" placeholder="Ex: Guihsp">
 
-                    <label for="link-instagram">Link do Instagram</label>
-                    <input type="text" id="link-instagram" placeholder="Digite o link do seu Instagram">
-
-                    <label for="link-linkedin">Link do LinkedIn</label>
-                    <input type="text" id="link-linkedin" placeholder="Digite o link do seu LinkedIn">
-
-                    <label for="num-whatsapp">Número do WhatsApp</label>
-                    <input type="text" id="num-whatsapp" placeholder="(99) 99999-9999 ">
-
-                    <button type="button" onclick="creatCard()">
-                        Enviar
-                    </button>
+                    <button onclick="getInfos()">Enviar</button>
                 </form>
 
-                <button class="arrow-right" type="button" onclick="spin()">
-                    <img src="./assets/img/arrow.svg" alt="Seta para Direita">
-                </button>
+                <a href="https:/https://github.com/Guihsp/Github-Card-3D">Repositório ></a>
 
+                <button class="arrow" onclick="flip()">
+                    <img src="./assets/img/arrow.svg" alt="Arrow">
+                </button>
             </div>
-        </main>
+
+        </div>
     </div>
 
     <script src="./scripts/main.js"></script>
