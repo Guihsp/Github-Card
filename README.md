@@ -26,7 +26,7 @@ Os dados do usuário são salvos localmente para garantir que as informações p
 
 ## Demonstração
 
-//Captura de Tela
+![GitHub Card 3D](./assets/img/captura-de-tela.png)
 
 ## Contribuições
 
