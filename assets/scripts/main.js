@@ -14,7 +14,10 @@ const getGithubInfos = () => {
     if (githubUsername) {
         fetch(`https://api.github.com/users/${githubUsername}`)
             .then(response => {
-                response.json();
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar os dados do usuário');
+                }
+                return response.json();
             })
             .then(data => {
                 document.querySelector('.user-login').innerHTML = data.login;
@@ -25,10 +28,6 @@ const getGithubInfos = () => {
                 document.querySelector('.user-followers').innerHTML = data.followers;
                 document.querySelector('.user-repos').innerHTML = data.public_repos;
                 document.querySelector('.user-location').innerHTML = data.location;
-            })
-            .catch(error => {
-                console.error(error);
-                window.alert('Erro ao buscar informações do GitHub');
             });
     }
 }
