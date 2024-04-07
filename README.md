@@ -19,7 +19,7 @@ Um projeto simples e interativo que utiliza a API do GitHub para exibir informa�
 
 ## Como Usar
 
-1. Acesse a página do projeto [clicando aqui](#).
+1. Acesse a página do projeto [clicando aqui](https://github-card-3d.netlify.app/).
 2. No lado 1 do card, suas informações do GitHub são automaticamente exibidas.
 3. Gire o card para acessar o Lado 2, onde você pode fornecer seu username para buscar informações no GitHub.
 
@@ -60,7 +60,7 @@ A simple and interactive project that uses the GitHub API to display user inform
 
 ## How to Use
 
-1. Access the project page [by clicking here](#).
+1. Access the project page [by clicking here](https://github-card-3d.netlify.app/).
 2. On Side 1 of the card, your GitHub information is automatically displayed.
 3. Flip the card to access Side 2, where you can provide your username to search for information on GitHub.
 
